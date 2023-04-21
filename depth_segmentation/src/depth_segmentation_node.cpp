@@ -576,7 +576,9 @@ class DepthSegmentationNode {
                                   &segments);
 
         if (segments.size() > 0u) {
-          publish_segments(segments, depth_msg->header);
+          // publish_segments(segments, depth_msg->header);
+          // try change to rgb_header for pose estimator
+          publish_segments(segments, rgb_msg->header);
         }
       }
 
